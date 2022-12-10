@@ -1,0 +1,245 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Overpass', sans-serif;
+    background-color: var(--clr-very-dark-blue);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+// varibles
+:root {
+
+    // colors
+    --clr-primary: hsl(217, 12%, 63%);
+    --clr-secondary: hsl(216, 12%, 54%);
+    --clr-light: hsl(0, 0%, 100%);
+    --clr-dark-blue: hsl(213, 19%, 18%);
+    --clr-dark-blue-2: hsl(213, 19%, 28%);
+    --clr-very-dark-blue: hsl(216, 12%, 8%);
+    --clr-orange: hsl(25, 97%, 53%);
+
+    // Font weights 
+    --fw-light: 400;
+    --fw-bold: 700;
+
+    // Font sizes
+    --fs-p: 0.9375rem;
+}
+
+@mixin center-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Active card styling 
+.card{
+    width: 25.75rem;
+    height: 25.875rem;
+    border-radius: 27px;
+    background-color: var(--clr-dark-blue);
+    padding: 1.9375rem 1.8125rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-img {
+    width: 51px;
+    height: 51px;
+    background-color: var(--clr-dark-blue-2);
+    border-radius: 50%;
+    @include center-align;
+}
+
+.card-header {
+    color: var(--clr-light);
+    font-weight: var(--fw-bold);
+    font-size: 1.7rem;
+    padding-block: 1.875rem 0.5625rem;
+}
+
+.card-desc {
+    color: var(--clr-primary);
+    letter-spacing: -0.01rem;
+    font-size: var(--fs-p);
+    font-weight: var(--fw-light);
+    line-height: 152.1%;
+}
+
+.ratings {
+    ul{
+        padding: 0; 
+    }
+    .scale {
+        display: inline-block;
+        list-style-type: none;
+        padding-block: .5rem 0;
+        &:not(:first-child) {
+            margin-left: 18px;
+        }
+        div {
+            width: 52px;
+            height: 52px;
+            color: var(--clr-primary);
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: var(--clr-dark-blue-2);
+            @include center-align;
+            transition: all .3s ease-in-out;
+            &:hover, &:focus {
+                background-color: var(--clr-orange);
+                color: var(--clr-light);
+            }
+        }
+        .selected {
+            background-color: var(--clr-secondary);
+            color: var(--clr-light);
+        }
+    }
+}
+
+.btn {
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 1.406rem;
+    background-color: var(--clr-orange);
+    color: var(--clr-light);
+    cursor: pointer;
+    margin-top: 2rem;
+    @include center-align;
+}
+
+//Transition
+
+
+.unactive {
+    display: none;
+}
+
+.success {
+    text-align: center;
+    transition: all 1s ease-in;
+    .thanks-img {
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .rating-nbr {
+        width: 11.9375rem;
+        height: 2rem;
+        color: var(--clr-orange);
+        cursor: pointer;
+        border-radius: 22.5px;
+        background-color: hsl(213, 19%, 30%);
+        @include center-align;
+        margin: auto;
+        margin-top: 2rem;
+        .rating {
+            padding-inline: 5px;
+        }
+    }
+
+    .thks {
+        color: var(--clr-light);
+        font-weight: var(--fw-bold);
+        font-size: 1.7625rem;
+        margin-block: 2.125rem 0.9375rem;
+    }
+    .message {
+        color: var(--clr-primary);
+        font-weight: var(--fw-light);
+        font-size: var(--fs-p);
+        line-height: 156.1%;
+    }
+}
+
+// Responsive 
+
+@media screen and (max-width: 575px) {
+
+    .card {
+        width: 21rem;
+    }
+    .ratings .scale {
+        &:not(:first-child) {
+                margin-left: 8px;
+            }
+        div {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- styles file -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); color: aliceblue;}
+    .attribution a { color: hsl(228, 45%, 44%); text-decoration: none; color: hsl(25, 97%, 53%);}
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="active">
+      <div class="card-img">
+        <img src="./images/icon-star.svg" alt="Star icon">
+      </div>
+      <h2 class="card-header">
+        How did we do?
+      </h2>
+      <p class="card-desc">
+        Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+      </p>
+      <div class="ratings">
+        <ul>
+          <li class="scale">
+            <div class="selected nbr">1</div>
+          </li>
+          <li class="scale">
+            <div class="nbr">2</div>
+          </li>
+          <li class="scale">
+            <div class="nbr">3</div>
+          </li>
+          <li class="scale">
+            <div class="nbr">4</div>
+          </li>
+          <li class="scale">
+            <div class="nbr">5</div>
+          </li>
+        </ul>
+      </div>
+      <div class="btn">Submit</div>
+    </div>
+
+    <!-- Rate end -->
+
+
+    <div class="success unactive">
+      <div class="thanks-img">
+        <img src="./images/illustration-thank-you.svg" alt="Thanking image">
+      </div>
+      <div class="rating-nbr">You selected <span class="rating">4</span> out 5</div>
+
+      <h2 class="thks">Thank you</h2>
+      <p class="message">We appreciate you taking the time to give a rating if you ever need more support don’t hesitate to get in touch!</p>
+    </div>
+  </div>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Dytoma">Dytoma</a>.
+  </div>
+
+  <script src="index.js" charset="UTF-8"></script>
+</body>
+</html>
